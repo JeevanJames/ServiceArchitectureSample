@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "JeevanInc.Billing.CommandService.Api.Grpc";
+
+package service;
+
+// The greeting service definition.
+service BillingService {
+  // Sends a greeting
+  rpc BillCustomer (BillCustomerInput) returns (BillCustomerOutput);
+}
+
+// The request message containing the user's name.
+message BillCustomerInput {
+}
+
+// The response message containing the greetings.
+message BillCustomerOutput {
+}

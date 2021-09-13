@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>$(BaseNamespace).Api.Grpc</RootNamespace>
+        <AssemblyName>$(RootNamespace)</AssemblyName>
+        <DocumentationFile>Properties\$(AssemblyName).xml</DocumentationFile>
+        <Description>Billing command service gRPC API</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Protobuf Include="Protos\service.proto" GrpcServices="Server" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Grpc.AspNetCore" Version="2.34.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\Contract\Contract.csproj" />
+        <ProjectReference Include="..\..\src\Domain\Domain.csproj" />
+    </ItemGroup>
+
+</Project>
