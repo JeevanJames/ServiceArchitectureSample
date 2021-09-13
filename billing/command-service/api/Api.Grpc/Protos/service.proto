@@ -1,19 +1,33 @@
 syntax = "proto3";
 
+import "google/protobuf/timestamp.proto";
+
 option csharp_namespace = "JeevanInc.Billing.CommandService.Api.Grpc";
 
 package service;
 
-// The greeting service definition.
 service BillingService {
-  // Sends a greeting
   rpc BillCustomer (BillCustomerInput) returns (BillCustomerOutput);
+  rpc DeleteBills (DeleteBillsInput) returns (DeleteBillsOutput);
 }
 
-// The request message containing the user's name.
 message BillCustomerInput {
+    repeated CustomerBill bills = 1;
 }
 
-// The response message containing the greetings.
+message CustomerBill {
+    string id = 1;
+    google.protobuf.Timestamp timestamp = 2;
+    double total_amount = 3;
+}
+
 message BillCustomerOutput {
+}
+
+message DeleteBillsInput {
+    repeated string bill_ids = 1;
+}
+
+message DeleteBillsOutput {
+    repeated string bill_ids = 1;
 }

@@ -7,7 +7,7 @@ using JeevanInc.Billing.CommandService.Contract;
 
 namespace JeevanInc.Billing.CommandService.Api.Grpc.Services
 {
-    public class BillingServiceImpl : BillingService.BillingServiceBase
+    public partial class BillingServiceImpl : BillingService.BillingServiceBase
     {
         private readonly IBillingService _service;
 
@@ -18,7 +18,12 @@ namespace JeevanInc.Billing.CommandService.Api.Grpc.Services
 
         public override async Task<BillCustomerOutput> BillCustomer(BillCustomerInput request, ServerCallContext context)
         {
-            return await _service.BillCustomer(request);
+            return await _service.BillCustomers(request);
+        }
+
+        public override async Task<DeleteBillsOutput> DeleteBills(DeleteBillsInput request, ServerCallContext context)
+        {
+            return await _service.DeleteBills(request);
         }
     }
 }

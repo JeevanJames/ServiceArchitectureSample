@@ -4,15 +4,23 @@
         <name>JeevanInc.Billing.CommandService.Api.Grpc</name>
     </assembly>
     <members>
-        <member name="T:JeevanInc.Billing.CommandService.Api.Grpc.BillCustomerInput">
-            <summary>
-            The request message containing the user's name.
-            </summary>
+        <member name="F:JeevanInc.Billing.CommandService.Api.Grpc.BillCustomerInput.BillsFieldNumber">
+            <summary>Field number for the "bills" field.</summary>
         </member>
-        <member name="T:JeevanInc.Billing.CommandService.Api.Grpc.BillCustomerOutput">
-            <summary>
-            The response message containing the greetings.
-            </summary>
+        <member name="F:JeevanInc.Billing.CommandService.Api.Grpc.CustomerBill.IdFieldNumber">
+            <summary>Field number for the "id" field.</summary>
+        </member>
+        <member name="F:JeevanInc.Billing.CommandService.Api.Grpc.CustomerBill.TimestampFieldNumber">
+            <summary>Field number for the "timestamp" field.</summary>
+        </member>
+        <member name="F:JeevanInc.Billing.CommandService.Api.Grpc.CustomerBill.TotalAmountFieldNumber">
+            <summary>Field number for the "total_amount" field.</summary>
+        </member>
+        <member name="F:JeevanInc.Billing.CommandService.Api.Grpc.DeleteBillsInput.BillIdsFieldNumber">
+            <summary>Field number for the "bill_ids" field.</summary>
+        </member>
+        <member name="F:JeevanInc.Billing.CommandService.Api.Grpc.DeleteBillsOutput.BillIdsFieldNumber">
+            <summary>Field number for the "bill_ids" field.</summary>
         </member>
         <member name="T:JeevanInc.Billing.CommandService.Api.Grpc.ServiceReflection">
             <summary>Holder for reflection information generated from Protos/service.proto</summary>
@@ -20,24 +28,11 @@
         <member name="P:JeevanInc.Billing.CommandService.Api.Grpc.ServiceReflection.Descriptor">
             <summary>File descriptor for Protos/service.proto</summary>
         </member>
-        <member name="T:JeevanInc.Billing.CommandService.Api.Grpc.BillingService">
-            <summary>
-            The greeting service definition.
-            </summary>
-        </member>
         <member name="P:JeevanInc.Billing.CommandService.Api.Grpc.BillingService.Descriptor">
             <summary>Service descriptor</summary>
         </member>
         <member name="T:JeevanInc.Billing.CommandService.Api.Grpc.BillingService.BillingServiceBase">
             <summary>Base class for server-side implementations of BillingService</summary>
-        </member>
-        <member name="M:JeevanInc.Billing.CommandService.Api.Grpc.BillingService.BillingServiceBase.BillCustomer(JeevanInc.Billing.CommandService.Api.Grpc.BillCustomerInput,Grpc.Core.ServerCallContext)">
-            <summary>
-            Sends a greeting
-            </summary>
-            <param name="request">The request received from the client.</param>
-            <param name="context">The context of the server-side call handler being invoked.</param>
-            <returns>The response to send back to the client (wrapped by a task).</returns>
         </member>
         <member name="M:JeevanInc.Billing.CommandService.Api.Grpc.BillingService.BindService(JeevanInc.Billing.CommandService.Api.Grpc.BillingService.BillingServiceBase)">
             <summary>Creates service definition that can be registered with a server</summary>

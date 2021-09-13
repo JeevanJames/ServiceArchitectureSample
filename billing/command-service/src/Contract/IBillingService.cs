@@ -6,6 +6,8 @@ namespace JeevanInc.Billing.CommandService.Contract
 {
     public interface IBillingService
     {
-        Task<BillCustomerOutput> BillCustomer(BillCustomerInput input);
+        Task<BillCustomerOutput> BillCustomers(BillCustomerInput input);
+
+        Task<DeleteBillsOutput> DeleteBills(DeleteBillsInput input);
     }
 }
